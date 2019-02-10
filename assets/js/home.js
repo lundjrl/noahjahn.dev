@@ -32,7 +32,7 @@ function checkPageLocation() {
     } else if (window.pageYOffset >= height) {
         addActiveToNav(document.getElementById("nav-projects"));
     } else if (window.pageYOffset < height) {
-        addActiveToNav(document.getElementById("nav-about"));s
+        addActiveToNav(document.getElementById("nav-about"));
     }
 }
 
