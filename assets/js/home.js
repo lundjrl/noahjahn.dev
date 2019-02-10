@@ -22,4 +22,20 @@ function addActiveToNav(makeActive) {
     makeActive.classList.add("active");
 }
 
+function checkPageLocation() {
+    var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    if (window.pageYOffset >= height * 3) {
+        addActiveToNav(document.getElementById("nav-contact"));
+    } else if (window.pageYOffset >= height * 2) {
+        addActiveToNav(document.getElementById("nav-resume"));
+    } else if (window.pageYOffset >= height) {
+        addActiveToNav(document.getElementById("nav-projects"));
+    } else if (window.pageYOffset < height) {
+        addActiveToNav(document.getElementById("nav-about"));s
+    }
+}
+
 window.onload = initialLoad;
+
+window.onscroll = checkPageLocation;

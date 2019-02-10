@@ -14,23 +14,23 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-darkblue">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-darklightblue">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#about" onclick="addActiveToNav(this)">About</a>
+                            <a id="nav-about" class="nav-link active" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#projects" onclick="addActiveToNav(this)">Projects</a>
+                            <a id="nav-projects" class="nav-link" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#resume" onclick="addActiveToNav(this)">Resume</a>
+                            <a id="nav-resume" class="nav-link" href="#resume">Resume</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact" onclick="addActiveToNav(this)">Contact</a>
+                            <a id="nav-contact" class="nav-link" href="#contact">Contact</a>
                         </li>
                     </ul>
                     <span id="quote" class="navbar-text" onclick="displayQuote()"></span>
@@ -55,10 +55,6 @@
                                     locally and remotely in the cloud, programming, and helping clients automate their work flow.
                                     I am in my Senior year at Western Michigan University and will graduate in December
                                     2019 with a Bachelor of Science in Computer Science and a Minor in Mathematics.
-                                    <!-- During my years
-                                    in college, I've helped build a theoretical web application for finding the best
-                                    Graphics Cards based on Game FPS (GPU Butter) and an emperical website for an a
-                                    capella group (Here Comes Treble). -->
                                 </p>
                             </div>
                         </div>
@@ -66,17 +62,42 @@
                 </div>
             </a>
             <a name="projects">
-                <div class="page" style="background: red;">
-                    projects
+                <div class="page bg-darkbluegreen">
+                    <!-- <div class="vcenter"> -->
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="new_card">
+                                            <img src="assets\img\projects\herecomestreblewmu.png" alt="herecomestreblewmu" style="width:100%;">
+                                            <h4>Here Comes Treble WMU</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="new_card">
+                                            project2
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="new_card">
+                                            project3
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    <!-- </div> -->
                 </div>
             </a>
             <a name="resume">
-                <div class="page" style="background: blue;">
-                    resume
+                <div class="page bg-darkblue">
+                    <iframe class="center" src="https://docs.google.com/document/d/12ZzMAS1ltaHahaDxY3U3oXl8eShzR6A-VnayFt1lt_M/edit?usp=sharing" style="width:60%;height:80%;"></iframe>
                 </div>
             </a>
             <a name="contact">
-                <div class="page" style="background: green;">
+                <div class="page bg-darkblueorange">
                     <div class="center">
                         <div class="row">
                             <div class="col text-right">
