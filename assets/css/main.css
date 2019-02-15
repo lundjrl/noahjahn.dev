@@ -62,7 +62,6 @@ p {
 .vcenter {
     position: relative;
     top: 35%;
-    /* transform: (-50%, -50%); */
 }
 
 .bottom {
@@ -80,10 +79,6 @@ p {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: all .2s ease-in-out;
   background-color: var(--dark-lightblue);
-}
-
-.iframe {
-
 }
 
 .new_card:hover {
@@ -108,4 +103,25 @@ p {
    margin-left: auto !important;
    margin-right: auto !important;
    display: block !important;
+}
+
+
+
+@media (max-width: 992px) {
+    #about {
+        background-image: url("../img/Jahn,Noah_0764E.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-left: 5%;
+    }
+}
+
+@media (max-width: 576px) {
+
+
+    #about {
+        background-color: var(--dark-blue);
+        background-image: url();
+    }
 }
