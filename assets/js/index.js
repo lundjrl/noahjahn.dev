@@ -1,7 +1,7 @@
 function initialLoad() {
     displayQuote();
 
-    var media = window.matchMedia("(max-width: 576px)")
+    var media = window.matchMedia("(max-width: 576px)");
     checkMedia(media);
     media.addListener(checkMedia);
 }
@@ -9,7 +9,7 @@ function initialLoad() {
 function displayQuote() {
     var quotes = [  "\"Fear is the path to the dark side.\" &#8210 Yoda",
                     "\"With great power, comes great responsibility.\" &#8210 Uncle Ben",
-                    "\"The Force will be with you. Always.\" &#8210 Obi-Wan Kenobi",
+                    "\"The Force will be with you. Always.\" &#8210 Obi-Wan Kenobi"
                 ];
 
     var navQuote = document.getElementById("quote");
@@ -31,10 +31,10 @@ function checkPageLocation() {
 
     if (window.pageYOffset >= height * 3) {
         addActiveToNav(document.getElementById("nav-contact"));
-    } else if (window.pageYOffset >= height * 2) {
-        addActiveToNav(document.getElementById("nav-resume"));
-    } else if (window.pageYOffset >= height) {
-        addActiveToNav(document.getElementById("nav-projects"));
+    // } else if (window.pageYOffset >= height * 2) {
+    //     addActiveToNav(document.getElementById("nav-resume"));
+    // } else if (window.pageYOffset >= height) {
+    //     addActiveToNav(document.getElementById("nav-projects"));
     } else if (window.pageYOffset < height) {
         addActiveToNav(document.getElementById("nav-about"));
     }
@@ -47,7 +47,7 @@ function checkMedia(media) {
     } else {
         var element, name, classes;
         name = "d-none";
-        element = document.getElementById("mobile-img")
+        element = document.getElementById("mobile-img");
         classes = element.className.split(" ");
         if (classes.indexOf(name) == -1) {
             element.className += " " + name;
