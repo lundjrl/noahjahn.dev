@@ -1,5 +1,9 @@
 function initialLoad() {
     displayQuote();
+
+    var media = window.matchMedia("(max-width: 576px)")
+    checkMedia(media);
+    media.addListener(checkMedia);
 }
 
 function displayQuote() {
@@ -36,6 +40,20 @@ function checkPageLocation() {
     }
 }
 
-window.onload = initialLoad;
+function checkMedia(media) {
+    if (media.matches) {
+        document.getElementById("mobile-img").classList.remove("d-none");
+        // document.getElementById("mobile-rm").classList.remove("bottom");
+    } else {
+        var element, name, classes;
+        name = "d-none";
+        element = document.getElementById("mobile-img")
+        classes = element.className.split(" ");
+        if (classes.indexOf(name) == -1) {
+            element.className += " " + name;
+        }
+    }
+}
 
+window.onload = initialLoad;
 window.onscroll = checkPageLocation;

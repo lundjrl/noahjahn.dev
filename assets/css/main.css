@@ -5,6 +5,7 @@
   --dark-blueorange: #231912;
   --dark-bluered: #121423;
   --light-bluewhite: #a0a4a7;
+  --lighter-bluewhite: #B3B6B9;
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +34,7 @@ hr {
 }
 
 p {
-    color: #93979b;
+    color: var(--lighter-bluewhite);
 }
 
 .bg-darklightblue {
@@ -62,7 +63,6 @@ p {
 .vcenter {
     position: relative;
     top: 35%;
-    /* transform: (-50%, -50%); */
 }
 
 .bottom {
@@ -76,14 +76,22 @@ p {
     padding-top: 56px;
 }
 
+.half-page {
+    height: 50vh;
+    width: 100%;
+    padding-top: 56px;
+}
+
+.quarter-page {
+    height: 25vh;
+    width: 100%;
+    padding-top: 56px;
+}
+
 .new_card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: all .2s ease-in-out;
   background-color: var(--dark-lightblue);
-}
-
-.iframe {
-
 }
 
 .new_card:hover {
@@ -100,12 +108,33 @@ p {
 }
 
 .personal-img {
-    width: 40%;
-    border-radius: 50%
+    margin-top: 5%;
+    max-width: 60%;
+    border-radius: 50%;
+    background-size: cover;
 }
 
 .center-block {
    margin-left: auto !important;
    margin-right: auto !important;
    display: block !important;
+}
+
+@media (max-width: 992px) {
+    #about {
+        background-image: url("../img/Jahn,Noah_0764E.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-left: 5%;
+    }
+}
+
+@media (max-width: 576px) {
+    /* #quote */
+
+    #about {
+        background-color: var(--dark-blue);
+        background-image: url();
+    }
 }
