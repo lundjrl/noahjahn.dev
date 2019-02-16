@@ -68,7 +68,6 @@ p {
 .bottom {
     position: absolute;
     bottom: 10%;
-    height: 100%;
 }
 
 .page {
@@ -85,6 +84,12 @@ p {
 
 .quarter-page {
     height: 25vh;
+    width: 100%;
+    padding-top: 56px;
+}
+
+.tenth-page {
+    height: 10vh;
     width: 100%;
     padding-top: 56px;
 }
@@ -126,7 +131,7 @@ p {
         background-image: url("../img/Jahn,Noah_0764E.png");
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: right;
         padding-left: 5%;
     }
 }
@@ -137,5 +142,18 @@ p {
     #about {
         background-color: var(--dark-blue);
         background-image: url();
+        display: flex;
+        align-items: center;
+        text-align: center;
+        position: relative;
     }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    h1 {
+        font-size: 2em !important;
+    }
+
 }

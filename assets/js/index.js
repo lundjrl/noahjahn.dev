@@ -43,15 +43,17 @@ function checkPageLocation() {
 function checkMedia(media) {
     if (media.matches) {
         document.getElementById("mobile-img").classList.remove("d-none");
-        // document.getElementById("mobile-rm").classList.remove("bottom");
+        document.getElementById("mobile-rm-bottom").classList.remove("bottom");
     } else {
-        var element, name, classes;
-        name = "d-none";
-        element = document.getElementById("mobile-img");
-        classes = element.className.split(" ");
-        if (classes.indexOf(name) == -1) {
-            element.className += " " + name;
-        }
+        addClass(document.getElementById("mobile-img"), "d-none");
+        addClass(document.getElementById("mobile-rm-bottom"), "bottom");
+    }
+}
+
+function addClass(element, name) {
+    var classes = element.className.split(" ");
+    if (classes.indexOf(name) == -1) {
+        element.className += " " + name;
     }
 }
 
