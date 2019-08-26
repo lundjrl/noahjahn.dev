@@ -53,6 +53,10 @@ p {
     background-color: var(--dark-blue);
 }
 
+.navbar {
+    background: transparent;
+}
+
 .center {
     position: relative;
     top: 50%;
