@@ -73,7 +73,6 @@ body {
   height: 100%;
   color: var(--light-bluewhite);
   text-align: left;
-  background-color: var(--dark-blue);
 }
 
 [tabindex="-1"]:focus {
