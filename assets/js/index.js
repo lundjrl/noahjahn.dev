@@ -1,7 +1,7 @@
 function initialLoad() {
     displayQuote();
 
-    var media = window.matchMedia("(max-width: 576px)");
+    var media = window.matchMedia("(max-width: 992px)");
     checkMedia(media);
     media.addListener(checkMedia);
 }
