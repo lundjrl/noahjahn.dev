@@ -119,16 +119,17 @@ a {
 }
 
 #about {
-    background-image: url("../img/Jahn,Noah_0764E.png");
+    background: url("../img/background.jpg") fixed;
+    background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: right;
     padding-left: 5%;
 }
 
 .personal-img {
     margin-top: 5%;
-    max-width: 60%;
+    margin-bottom: 5%;
+    max-width: 256px;
     border-radius: 50%;
     background-size: cover;
 }
@@ -141,7 +142,7 @@ a {
 
 @media (max-width: 992px) {
     #about {
-        background-image: url("../img/Jahn,Noah_0764E.png");
+        background-image: url("../img/background.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: right;
