@@ -3,120 +3,237 @@
     <head>
         <title>Noah Jahn</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/skeleton.css">
+        <link rel="stylesheet" href="assets/css/custom.css">
         <link rel="icon" href="assets/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-        <script src="assets/js/index.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script src="assets/js/index.js"></script>
     </head>
-
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a id="nav-about" class="nav-link active" href="#about">About</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a id="nav-projects" class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="nav-resume" class="nav-link" href="#resume">Resume</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a id="nav-contact" class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <span id="quote" class="navbar-text" onclick="displayQuote()"></span>
-                </div>
-                <span id="quote" class="navbar-text" onclick="displayQuote()"></span>
-            </nav>
-        </header>
-        <div class="main">
-            <a name="about">
-                <div id="about" class="page">
-                    <div id="mobile-rm-bottom" class="bottom">
-                        <div id="mobile-img" class="d-none">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-lg text-center">
-                                        <img class="personal-img" src="assets/img/profile.jpg" alt="Noah Jahn">
-                                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="one-third column">
+                    <div class="row">
+                        <div class="column">
+                            <div class="sidebar">
+                                <img class="profile" src="assets/img/profile.svg">
+                                <h4 class="custom"><b>Noah Alexander Jahn</b></h4>
+                                <h5 class="custom">
+                                    <i>
+                                        software developer<br>
+                                        based in Grand Rapids, MI
+                                    </i>
+                                </h5>
+                                <div>
+                                    <a class="contact-link" href="https://www.linkedin.com/in/noah-jahn-ab5499121/" target="_blank">
+                                        <img class="contact-icon" src="assets/img/linkedin.svg">
+                                    </a>
+                                    <a class="contact-link" href="https://github.com/noahjahn" target="_blank">
+                                        <img class="contact-icon" src="assets/img/github.svg">
+                                    </a>
+                                    <a class="contact-link" href="https://gitlab.com/noah.jahn" target="_blank">
+                                        <img class="contact-icon" src="assets/img/gitlab.svg">
+                                    </a>
+                                    <a class="contact-link" href="mailto:najahn19@gmail.com" target="_blank">
+                                        <img class="contact-icon" src="assets/img/email.svg">
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <h1>Hi, I'm Noah Jahn</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <p>
-                                        I'm a Software Developer with a Bachelor of Science in Computer Science from
-                                        Western Michigan University. I enjoy writing readable enterprise cloud web 
-                                        applications in PHP using frameworks like Laravel and CodeIgniter. I have 
-                                        hands-on experience with managing apache web servers and MySQL databases in AWS.
-                                    </p>
-                                </div>
-                            </div>
+                            &nbsp;
                         </div>
                     </div>
                 </div>
-            </a>
-            <!-- <a name="projects">
-                <div class="page bg-darkbluegreen">
-                    <div class="center">
-                        <div class="row">
-                            <div class="col-1"></div>
-                            <div class="col-10">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="new_card">
-                                            <img src="assets/img/projects/herecomestreblewmu.png" alt="herecomestreblewmu" style="width:100%;">
-                                            <h4>Here Comes Treble WMU</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-1"></div>
-                        </div>
+                <div class="two-thirds column">
+                    <h4 class="custom primary"><b>EXPERIENCE</b></h4>
+                    <div>
+                        <h4 class="custom">
+                            <b>SPARK Business Works / </b><span><i>Software Developer</i>
+                            </span>
+                        </h4>
+                        <h6 class="custom"><i>December 2019 - PRESENT, Grand Rapids, MI</i></h6>
+                        <ul>
+                            <li>
+                                Developed additional features with internal project management software written in PHP
+                            </li>
+                            <li>
+                                Implemented automated deployments client facing projects, integrating with GitLab CI/CD
+                            </li>
+                            <li>
+                                Performed application server migrations
+                            </li>
+                            <li>
+                                Implemented company-wide standards for creating and tagging resources in AWS (EC2, RDS, VPC, S3)
+                            </li>
+                            <li>
+                                Wrote non-technical guides on creating servers in AWS and setting up local development environments for future employees
+                            </li>
+                            <li>
+                                Worked on a team who built internal devops automation tools
+                            </li>
+                            <li>
+                                Managed groups of contractors and provided guidelines on application development
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="custom">
+                            <b>SPARK Business Works / </b><span><i>Systems Analyst</i>
+                            </span>
+                        </h4>
+                        <h6 class="custom"><i>August 2018 - December 2019, Kalamazoo, MI</i></h6>
+                        <ul>
+                            <li>
+                                Responsible for quality assurance and acceptance testing of custom built web and mobile applications
+                            </li>
+                            <li>
+                                Read code to ensure features and bug fixes are implemented correctly
+                            </li>
+                            <li>
+                                Write code to provide simple fixes to applications
+                            </li>
+                            <li>
+                                Write documentation and provide guidance on REST API’s
+                            </li>
+                            <li>
+                                Architect and design system work-flows to relay to developers
+                            </li>
+                            <li>
+                                Implement DevOps practices: automated deployments, continuous integration, automated server setup up
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="custom">
+                            <b>CSM Group of Companies / </b><span><i>IT Technician</i>
+                            </span>
+                        </h4>
+                        <h6 class="custom"><i>September 2017 - May 2019, Kalamazoo MI</i></h6>
+                        <ul>
+                            <li>
+                                Troubleshoot computer hardware, software, and cell phones
+                            </li>
+                            <li>
+                                Ensured security and usability of computers, email (Exchange Online), and networks
+                            </li>
+                            <li>
+                                Automated software installation and daily tasks with Python, Windows PowerShell, and Windows Batch scripts
+                            </li>
+                            <li>
+                                Managed Office 365 users and groups
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="custom">
+                            <b>Newkirk-Electric Associates Inc. / </b><span><i>IT Intern</i>
+                            </span>
+                        </h4>
+                        <h6 class="custom"><i>July 2016 - August 2017, Muskegon MI</i></h6>
+                        <ul>
+                            <li>
+                                Troubleshoot computer hardware, software, tablets, and cell phones in person and over the phone
+                            </li>
+                            <li>
+                                Deployed new computers to users
+                            </li>
+                            <li>
+                                Ensured hardware inventory is up to date and document work done
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="custom">
+                            <b>Muskegon Community College OIT / </b><span><i>Student Technician</i>
+                            </span>
+                        </h4>
+                        <h6 class="custom"><i>February 2016 - December 2017, Muskegon MI</i></h6>
+                        <ul>
+                            <li>
+                                Answered phone in a timely manner and create a ticket based on issue described by user
+                            </li>
+                            <li>
+                                Documented steps in ticket and in Knowledgebase if new issues arose
+                            </li>
+                            <li>
+                                Deployed new computers and desk phones.
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="custom primary"><b>PROJECTS AND ACCOMPLISHMENTS</b></h4>
+                    <div>
+                        <h4 class="custom">
+                            <b>Here Comes Treble Website / </b><span><i>CS3500 Web Technologies Final Project</i>
+                            </span>
+                        </h4>
+                        <h6 class="custom"><i>August 2018 - October 2018, Western Michigan University</i></h6>
+                        <ul>
+                            <li>
+                                Website for the Here Comes Treble Acapella group. Lists member information and event updates.
+                            </li>
+                            <li>
+                                <a href="https://github.com/noahjahn/herecomestreblewmu">
+                                    Open source on GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://herecomestreblewmu.noahjahn.dev">
+                                    Demo site
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="custom">
+                            <b>GPU Butter /   </b><span><i>CS4430 Database Management Systems Final Project</i>
+                            </span>
+                        </h4>
+                        <h6 class="custom"><i>July 2018 - August 2018, Western Michigan University</i></h6>
+                        <ul>
+                            <li>
+                                Easily search for Graphics Cards based on the FPS of a select few games.
+                            </li>
+                            <li>
+                                <a href="https://github.com/noahjahn/wmu-gpu-butter">
+                                    Open source on GitHub
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="custom primary"><b>EDUCATION</b></h4>
+                    <div>
+                        <h4 class="custom">
+                            <b>Bachelor of Science in Computer Science</b>
+                        </h4>
+                        <h6 class="custom"><i>Graduated December, 2019</i></h6>
+                        <ul>
+                            <li>
+                                From Western Michigan University in Kalamazoo, Michigan
+                            </li>
+                            <li>
+                                3.26 GPA
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="custom">
+                            <b>Muskegon Community College</b>
+                        </h4>
+                        <h6 class="custom"><i>August  2015 - July 2017, Muskegon MI</i></h6>
+                        <ul>
+                            <li>
+                                Course work includes transferable credits for future education continuation at WMU.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="custom">
+                            <b>Reeths-Puffer High School / </b><span><i>Diploma</i></span>
+                        </h4>
+                        <h6 class="custom"><i>September 2011 - June 2015, Muskegon MI</i></h6>
                     </div>
                 </div>
-            </a>
-            <a name="resume">
-                <div class="page bg-darkblue">
-                    <object class="center" data="assets/files/noahjahn.pdf" type="application/pdf" style="width:60%;height:80%;"></object>
-                </div>
-            </a> -->
-            <a name="contact">
-                <div class="tenth-page bg-darkburgendy">
-                    <div class="center">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col text-right">
-                                    <a href="mailto:najahn19@gmail.com"><h4>Email</h4></a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="https://github.com/noahjahn/"><h4>GitHub</h4></a>
-                                </div>
-                                <div class="col text-left">
-                                    <a href="https://www.linkedin.com/in/noah-jahn-ab5499121/"><h4>LinkedIn</h4></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            </div>
         </div>
     </body>
 </html>
