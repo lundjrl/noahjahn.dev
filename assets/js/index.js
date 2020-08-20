@@ -5,7 +5,7 @@ window.onload = function() {
         toggleDarkMode(document.querySelector('.switch'));
     }
 
-    apiNoahJahnDev = new ApiNoahjahnDev('http://localhost:8000', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');
+    apiNoahJahnDev = new ApiNoahjahnDev('http://api.noahjahn.dev', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');
     apiNoahJahnDev.login((err, result) => {
         if (err) {
             console.error(err);
