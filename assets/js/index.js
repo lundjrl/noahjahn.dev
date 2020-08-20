@@ -1,16 +1,38 @@
+// import { ApiNoahjahnDev } from './api-noahjahn-dev/index';
+
 window.onload = function() {
-    console.log(localStorage.getItem('dark-mode'));
-    if (localStorage.getItem('dark-mode') == '1') {
+    if (localStorage.getItem('dark-mode') == true) {
         toggleDarkMode(document.querySelector('.switch'));
     }
+
+    apiNoahJahnDev = new ApiNoahjahnDev('http://localhost:8000', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');
+    apiNoahJahnDev.login((err, result) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        apiNoahJahnDev.jwt = JSON.parse(result).data.jwt;
+
+        let visitor = {
+            "darkMode": localStorage.getItem('dark-mode'),
+            "origin": apiNoahJahnDev.origin
+        };
+
+        apiNoahJahnDev.createVisitor(visitor, (err, result) => {
+            if (err) {
+                console.error(err);
+            }
+        });
+    });
 };
 
 document.querySelector('.switch').addEventListener('click', function(e) {
     toggleDarkMode(e.currentTarget);
-    if (localStorage.getItem('dark-mode') == '1') {
-        localStorage.setItem('dark-mode', '0');
+    if (localStorage.getItem('dark-mode') == true) {
+        localStorage.setItem('dark-mode', false);
     } else {
-        localStorage.setItem('dark-mode', '1');
+        localStorage.setItem('dark-mode', true);
     }
 
 });
@@ -38,9 +60,9 @@ function disableDarkMode(element) {
 
 function toggleDarkModeSwitch(element) {
     if (element.classList.contains("on")) {
-        element.value = "0";
+        element.value = false;
     } else {
-        element.value = "1";
+        element.value = true;
     }
     element.classList.toggle('on');
 
