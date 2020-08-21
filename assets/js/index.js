@@ -1,5 +1,5 @@
 window.onload = async () => {
-    if (localStorage.getItem('dark-mode') == true) {
+    if (localStorage.getItem('dark-mode') == 'true') {
         toggleDarkMode(document.querySelector('.switch'));
     } else if (localStorage.getItem('dark-mode') === null) {
         localStorage.setItem('dark-mode', false);
@@ -42,11 +42,13 @@ function toggleDarkMode(element) {
     toggleDarkModeSwitch(element)
     toggleBackground();
     toggleText();
-    if (localStorage.getItem('dark-mode') == true) {
+
+    if (localStorage.getItem('dark-mode') == 'true') {
         localStorage.setItem('dark-mode', false);
     } else {
         localStorage.setItem('dark-mode', true);
     }
+    
     // if (apiNoahJahnDev) {
     //     if (apiNoahJahnDev.jwt) {
 
