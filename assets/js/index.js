@@ -11,9 +11,7 @@ window.onload = async () => {
 };
 
 function apiSetup() {
-    return new ApiNoahjahnDev('http://localhost:8000', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');
-    //https://api.noahjahn.dev', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ
-}
+    return new ApiNoahjahnDev('https://api.noahjahn.dev', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');}
 
 async function apiLogin(api) {
     try {
