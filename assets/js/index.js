@@ -1,46 +1,62 @@
-// import { ApiNoahjahnDev } from './api-noahjahn-dev/index';
-
-window.onload = function() {
+window.onload = async () => {
     if (localStorage.getItem('dark-mode') == true) {
         toggleDarkMode(document.querySelector('.switch'));
     }
 
-    apiNoahJahnDev = new ApiNoahjahnDev('https://api.noahjahn.dev', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');
-    apiNoahJahnDev.login((err, result) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
+    var apiNoahJahnDev = apiSetup();
+    await apiLogin(apiNoahJahnDev);
+    apiSendVisitor(apiNoahJahnDev);
+};
 
-        apiNoahJahnDev.jwt = JSON.parse(result).data.jwt;
+function apiSetup() {
+    return new ApiNoahjahnDev('http://localhost:8000', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');
+    //https://api.noahjahn.dev', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ
+}
 
+async function apiLogin(api) {
+    try {
+        let result = await api.login();
+        api.jwt = JSON.parse(result).data.jwt;
+    } catch (err) {
+        console.error(err);
+    }
+    
+}
+
+async function apiSendVisitor(api) {
+    try {
         let visitor = {
             "darkMode": localStorage.getItem('dark-mode'),
-            "origin": apiNoahJahnDev.origin
         };
 
-        apiNoahJahnDev.createVisitor(visitor, (err, result) => {
-            if (err) {
-                console.error(err);
-            }
-        });
-    });
-};
+        return await api.createVisitor(visitor);
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 document.querySelector('.switch').addEventListener('click', function(e) {
     toggleDarkMode(e.currentTarget);
-    if (localStorage.getItem('dark-mode') == true) {
-        localStorage.setItem('dark-mode', false);
-    } else {
-        localStorage.setItem('dark-mode', true);
-    }
-
 });
 
 function toggleDarkMode(element) {
     toggleDarkModeSwitch(element)
     toggleBackground();
     toggleText();
+    if (localStorage.getItem('dark-mode') == true) {
+        localStorage.setItem('dark-mode', false);
+    } else {
+        localStorage.setItem('dark-mode', true);
+    }
+    if (apiNoahJahnDev) {
+        if (apiNoahJahnDev.jwt) {
+
+        } else {
+            sendVisitor(apiNoahJahnDev);
+        }
+    } else {
+
+    }
 }
 
 function toggleBackground() {
@@ -52,10 +68,6 @@ function toggleText() {
     textElements.forEach(function(textElement) {
         textElement.classList.toggle('dark');
     });
-}
-
-function disableDarkMode(element) {
-    console.log("disable dark mode");
 }
 
 function toggleDarkModeSwitch(element) {
