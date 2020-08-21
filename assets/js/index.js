@@ -20,7 +20,6 @@ async function apiLogin(api) {
     } catch (err) {
         console.error(err);
     }
-    
 }
 
 async function apiSendVisitor(api) {
@@ -48,15 +47,15 @@ function toggleDarkMode(element) {
     } else {
         localStorage.setItem('dark-mode', true);
     }
-    if (apiNoahJahnDev) {
-        if (apiNoahJahnDev.jwt) {
+    // if (apiNoahJahnDev) {
+    //     if (apiNoahJahnDev.jwt) {
 
-        } else {
-            sendVisitor(apiNoahJahnDev);
-        }
-    } else {
+    //     } else {
+    //         sendVisitor(apiNoahJahnDev);
+    //     }
+    // } else {
 
-    }
+    // }
 }
 
 function toggleBackground() {
