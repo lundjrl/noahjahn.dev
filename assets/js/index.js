@@ -1,6 +1,8 @@
 window.onload = async () => {
     if (localStorage.getItem('dark-mode') == true) {
         toggleDarkMode(document.querySelector('.switch'));
+    } else if (localStorage.getItem('dark-mode') === null) {
+        localStorage.setItem('dark-mode', false);
     }
 
     var apiNoahJahnDev = apiSetup();
