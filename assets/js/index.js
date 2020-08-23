@@ -62,28 +62,17 @@ async function apiUpdateVisitor(api) {
 
 document.querySelector('.switch').addEventListener('click', function(e) {
     toggleDarkMode(e.currentTarget);
+    if (localStorage.getItem('dark-mode') == 'true') {
+        localStorage.setItem('dark-mode', false);
+    } else {
+        localStorage.setItem('dark-mode', true);
+    }
 });
 
 function toggleDarkMode(element) {
     toggleDarkModeSwitch(element)
     toggleBackground();
     toggleText();
-
-    if (localStorage.getItem('dark-mode') == 'true') {
-        localStorage.setItem('dark-mode', false);
-    } else {
-        localStorage.setItem('dark-mode', true);
-    }
-    
-    // if (apiNoahJahnDev) {
-    //     if (apiNoahJahnDev.jwt) {
-
-    //     } else {
-    //         sendVisitor(apiNoahJahnDev);
-    //     }
-    // } else {
-
-    // }
 }
 
 function toggleBackground() {
