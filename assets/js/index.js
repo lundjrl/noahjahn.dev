@@ -7,16 +7,25 @@ window.onload = async () => {
 
     var apiNoahJahnDev = apiSetup();
     await apiLogin(apiNoahJahnDev);
-    apiSendVisitor(apiNoahJahnDev);
+    if (localStorage.getItem('visitorId')) {
+        try {
+            await apiUpdateVisitor(apiNoahJahnDev);
+        } catch (err) {
+            
+        }
+    } else {
+        apiSendVisitor(apiNoahJahnDev);
+    }
 };
 
 function apiSetup() {
-    return new ApiNoahjahnDev('https://api.noahjahn.dev', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');}
+    return new ApiNoahjahnDev('https://api.noahjahn.dev', 'GZEQQZ9-51F4FG4-QTP4WC0-5Z8XFEZ');
+}
 
 async function apiLogin(api) {
     try {
         let result = await api.login();
-        api.jwt = JSON.parse(result).data.jwt;
+        api.jwt = result.data.jwt;
     } catch (err) {
         console.error(err);
     }
@@ -28,9 +37,26 @@ async function apiSendVisitor(api) {
             "darkMode": localStorage.getItem('dark-mode'),
         };
 
-        return await api.createVisitor(visitor);
+        visitor = await api.createVisitor(visitor);
+        localStorage.setItem('visitorId', visitor.data._id);
     } catch (err) {
         console.error(err);
+    }
+}
+
+async function apiUpdateVisitor(api) {
+    try {
+        let visitor = {
+            "_id": localStorage.getItem('visitorId'),
+            "darkMode": localStorage.getItem('dark-mode'),
+        };
+
+        return await api.updateVisitor(visitor);
+    } catch (err) {
+        console.error(err);
+        if (err == 404) {
+            apiSendVisitor(api);
+        }
     }
 }
 
