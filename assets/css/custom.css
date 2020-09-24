@@ -79,9 +79,16 @@ ul {
     list-style: disc;
 }
 
+ul ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--text-secondary) !important;
+    list-style: circle;
+}
+
 ul li {
-    line-height: 1.25 !important;
-    margin-bottom: 0 !important;
+    line-height: 1.25;
+    margin-bottom: 0;
 }
 
 .switch {
