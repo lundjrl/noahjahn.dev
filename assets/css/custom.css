@@ -25,6 +25,10 @@ body.dark {
     margin-top: 5em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+}
+
 h4.custom {
     margin-bottom: 0 !important;
     font-size: 2.0rem !important;
@@ -70,6 +74,15 @@ h6.custom {
     height: 24px;
     width: 24px;
     padding-right: 6px;
+}
+
+.cert-badge {
+    width: 70px;
+    padding-right: 1rem;
+}
+
+.cert-badges a {
+    display: inline-block;
 }
 
 ul {
