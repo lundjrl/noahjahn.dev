@@ -3,127 +3,69 @@ class ApiNoahjahnDev {
         this.host = host || localhost;
         this.apikey = apikey || null;
         this.jwt = null;
+        this.errors.jwtNotSetError = new Error('jwt is not set, you need to first login');
     }
 
-    login(callback) {
-        if (callback) {
+    jhr(requestMethodType, url, requestHeaders, requestBody = null, callback = null) {
+        return new Promise((resolve, reject) => {
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", `${this.host}/authentication/login`, true);
-            xhr.setRequestHeader("X-API-Key", this.apikey);
+            xhr.open(requestMethodType, url, true);
+            requestHeaders['Content-Type'] = 'application/json';
+            for (const [key, value] of Object.entries(requestHeaders)) {
+                xhr.setRequestHeader(key, value);
+            }
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status == 200) {
-                        callback(null, JSON.parse(xhr.response));
-                    } else {
-                        callback(xhr.status);
-                    }
-                }
-            };
-            xhr.send();
-        } else {
-            return new Promise((resolve, reject) => {
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", `${this.host}/authentication/login`, true);
-                xhr.setRequestHeader("X-API-Key", this.apikey);
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status == 200) {
+                        if (callback) {
+                            callback(null, JSON.parse(xhr.response));
+                        } else {
                             resolve(JSON.parse(xhr.response));
+                        }
+                    } else {
+                        if (callback) {
+                            callback(xhr.status);
                         } else {
                             reject(xhr.status);
                         }
                     }
-                };
-                xhr.send();
-            });
-        }
+                }
+            }
+            if (requestBody) {
+                xhr.send(JSON.stringify(requestBody));
+            }
+        });
+    }
+
+    async login(callback = null) {
+        return (await this.jhr('POST', `${this.host}/authentication/login`, { 'X-API-Key': this.apikey }));
     }
 
     createVisitor(visitor, callback) {
-        if (callback) {
-            if (this.jwt) {
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", `${this.host}/v1/visitors`, true);
-                xhr.setRequestHeader("Authorization", `Bearer ${this.jwt}`);
-                xhr.setRequestHeader("Content-Type", 'application/json');
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status == 200) {
-                            callback(null, JSON.parse(xhr.response));
-                        } else {
-                            callback(xhr.status);
-                        }
-                    }
-                };
-                xhr.send(JSON.stringify(visitor));
-            } else {
-                callback(new Error('jwt is not set, you need to first login'), null);
-            }
+        if (this.jwt) {
+            return (await this.jhr('POST', `${this.host}/v1/visitors`, { 'Authorization': `Bearer ${this.jwt}` }, visitor));
         } else {
-            return new Promise((resolve, reject) => {
-                if (this.jwt) {
-                    let xhr = new XMLHttpRequest();
-                    xhr.open("POST", `${this.host}/v1/visitors`, true);
-                    xhr.setRequestHeader("Authorization", `Bearer ${this.jwt}`);
-                    xhr.setRequestHeader("Content-Type", 'application/json');
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status == 200) {
-                                resolve(JSON.parse(xhr.response));
-                            } else {
-                                reject(xhr.status);
-                            }
-                        }
-                    };
-                    xhr.send(JSON.stringify(visitor));
-                } else {
-                    reject(new Error('jwt is not set, you need to first login'), null);
-                }
-            });
+            if (callback) {
+                callback(this.errors.jwtNotSetError, null);
+            } else {
+                return new Promise((resolve, reject) => {
+                    reject(this.errors.jwtNotSetError);
+                });
+            }
         }
     }
 
     updateVisitor(visitor, callback) {
-        if (callback) {
-            if (this.jwt) {
-                let xhr = new XMLHttpRequest();
-                xhr.open("PATCH", `${this.host}/v1/visitors`, true);
-                xhr.setRequestHeader("Authorization", `Bearer ${this.jwt}`);
-                xhr.setRequestHeader("Content-Type", 'application/json');
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status == 200) {
-                            callback(null, JSON.parse(xhr.response));
-                        } else {
-                            callback(xhr.status);
-                        }
-                    }
-                };
-                xhr.send(JSON.stringify(visitor));
-            } else {
-                callback(new Error('jwt is not set, you need to first login'), null);
-            }
+        if (this.jwt) {
+            return (await this.jhr('PATCH', `${this.host}/v1/visitors`, { 'Authorization': `Bearer ${this.jwt}` }, visitor));
         } else {
-            return new Promise((resolve, reject) => {
-                if (this.jwt) {
-                    let xhr = new XMLHttpRequest();
-                    xhr.open("PATCH", `${this.host}/v1/visitors`, true);
-                    xhr.setRequestHeader("Authorization", `Bearer ${this.jwt}`);
-                    xhr.setRequestHeader("Content-Type", 'application/json');
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status == 200) {
-                                resolve(JSON.parse(xhr.response));
-                            } else {
-                                reject(xhr.status);
-                            }
-                        }
-                    };
-                    xhr.send(JSON.stringify(visitor));
-                } else {
-                    reject(new Error('jwt is not set, you need to first login'), null);
-                }
-            });
+            if (callback) {
+                callback(jwtNotSetError, null);
+            } else {
+                return new Promise((resolve, reject) => {
+                    reject(jwtNotSetError);
+                });
+            }
         }
     }
 }
