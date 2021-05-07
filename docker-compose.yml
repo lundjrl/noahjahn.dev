@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+    node:
+        build:
+            dockerfile: 'Dockerfile'
+            context: '.'
+        working_dir: /app
+        command: /bin/sh -c 'npm install --production=false && npm run serve'
+        user: '${UID}:${UID}'
+        volumes:
+            - ./:/app
+        ports:
+            - 8080:8080
