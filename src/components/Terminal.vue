@@ -4,8 +4,8 @@
     <TerminalText text="My name is Noah Jahn"/>
     <TerminalText text="I'm a Software Developer"/>
     <TerminalText
-      text="I build web apps, websites, and software to automate tasks.
-        After all, that's the point of programming right?"
+      text="I build intuitive software and systems to solve
+      problems and make humans more efficient."
     />
     <TerminalText text="I enjoy exploring the world with my Wife and playing video games"/>
     <TerminalText text="This is a terminal about me. Type `help` to begin"/>
