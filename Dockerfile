@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:16
 
 # Defaut node UID is 1000
 ARG UID=1000
