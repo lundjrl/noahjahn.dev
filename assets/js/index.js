@@ -1,3 +1,5 @@
+let apiNoahJahnDev;
+
 window.onload = async () => {
     if (localStorage.getItem('dark-mode') == 'true') {
         toggleDarkMode(document.querySelector('.switch'));
@@ -5,13 +7,13 @@ window.onload = async () => {
         localStorage.setItem('dark-mode', false);
     }
 
-    var apiNoahJahnDev = apiSetup();
+    apiNoahJahnDev = apiSetup();
     await apiLogin(apiNoahJahnDev);
     if (localStorage.getItem('visitorId')) {
         try {
             await apiUpdateVisitor(apiNoahJahnDev);
         } catch (err) {
-            
+            console.error(err)
         }
     } else {
         apiSendVisitor(apiNoahJahnDev);
@@ -62,17 +64,32 @@ async function apiUpdateVisitor(api) {
 
 document.querySelector('.switch').addEventListener('click', function(e) {
     toggleDarkMode(e.currentTarget);
-    if (localStorage.getItem('dark-mode') == 'true') {
-        localStorage.setItem('dark-mode', false);
-    } else {
-        localStorage.setItem('dark-mode', true);
-    }
+    updateLocalStorageDarkModeValue();
+    sendDarkModeChoiceToApi();
 });
+
+async function sendDarkModeChoiceToApi() {
+    if (localStorage.getItem('visitorId')) {
+        try {
+            await apiUpdateVisitor(apiNoahJahnDev);
+        } catch (err) {
+            console.error(err)
+        }
+    }
+}
 
 function toggleDarkMode(element) {
     toggleDarkModeSwitch(element)
     toggleBackground();
     toggleText();
+}
+
+function updateLocalStorageDarkModeValue() {
+    if (localStorage.getItem('dark-mode') == 'true') {
+        localStorage.setItem('dark-mode', false);
+    } else {
+        localStorage.setItem('dark-mode', true);
+    }
 }
 
 function toggleBackground() {
