@@ -1,16 +1,17 @@
 :root {
     --background: #E3E3E3;
     --background-dark: #151515;
-    --text-primary: #616161;
+    --text-primary: #151515;
     --text-primary-light: #E1E1E1;
-    --text-secondary: #959595;
+    --text-secondary: #3b3b3b;
+    --text-secondary-light: #B5B5B5;
     --primary: #3B79C1;
     --complimentary: #c1833b;
   }
 
 body {
     background-color: var(--background);
-    color: var(--text-primary) !important;
+    color: var(--text-primary);
     -webkit-transition: all 200ms linear;
     -moz-transition: all 200ms linear;
     -o-transition: all 200ms linear;
@@ -46,14 +47,22 @@ h4.primary {
     color: var(--primary) !important;
 }
 
+h5.custom.dark {
+    color: var(--text-secondary-light);
+}
+
 h5.custom {
-    color: var(--text-secondary) !important;
+    color: var(--text-secondary);
     font-size: 1.8rem !important;
     line-height: 1 !important;
 }
 
+h6.custom.dark {
+    color: var(--text-secondary-light);
+}
+
 h6.custom {
-    color: var(--text-secondary) !important;
+    color: var(--text-secondary);
     margin-bottom: 0 !important;
     line-height: 1 !important;
 }
@@ -85,17 +94,20 @@ h6.custom {
     display: inline-block;
 }
 
+ul.dark {
+    color: var(--text-secondary-light);
+}
+
 ul {
     margin-top: 1rem;
     margin-left: 4rem;
-    color: var(--text-secondary) !important;
+    color: var(--text-secondary);
     list-style: disc;
 }
 
 ul ul {
     margin-top: 0;
     margin-bottom: 0;
-    color: var(--text-secondary) !important;
     list-style: circle;
 }
 

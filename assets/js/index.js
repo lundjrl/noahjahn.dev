@@ -80,7 +80,7 @@ function toggleBackground() {
 }
 
 function toggleText() {
-    var textElements = document.querySelectorAll('h4.custom');
+    var textElements = document.querySelectorAll('h4.custom, h5.custom, h6.custom, ul');
     textElements.forEach(function(textElement) {
         textElement.classList.toggle('dark');
     });
