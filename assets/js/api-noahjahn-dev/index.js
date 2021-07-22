@@ -3,7 +3,9 @@ class ApiNoahjahnDev {
         this.host = host || localhost;
         this.apikey = apikey || null;
         this.jwt = null;
-        this.errors.jwtNotSetError = new Error('jwt is not set, you need to first login');
+        this.errors = {
+            jwtNotSetError: new Error('jwt is not set, you need to first login'),
+        };
     }
 
     jhr(requestMethodType, url, requestHeaders, requestBody = null, callback = null) {
@@ -33,6 +35,8 @@ class ApiNoahjahnDev {
             }
             if (requestBody) {
                 xhr.send(JSON.stringify(requestBody));
+            } else {
+                xhr.send();
             }
         });
     }
@@ -41,7 +45,7 @@ class ApiNoahjahnDev {
         return (await this.jhr('POST', `${this.host}/authentication/login`, { 'X-API-Key': this.apikey }));
     }
 
-    createVisitor(visitor, callback) {
+    async createVisitor(visitor, callback) {
         if (this.jwt) {
             return (await this.jhr('POST', `${this.host}/v1/visitors`, { 'Authorization': `Bearer ${this.jwt}` }, visitor));
         } else {
@@ -55,7 +59,7 @@ class ApiNoahjahnDev {
         }
     }
 
-    updateVisitor(visitor, callback) {
+    async updateVisitor(visitor, callback) {
         if (this.jwt) {
             return (await this.jhr('PATCH', `${this.host}/v1/visitors`, { 'Authorization': `Bearer ${this.jwt}` }, visitor));
         } else {
