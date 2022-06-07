@@ -62,7 +62,7 @@ async function apiUpdateVisitor(api) {
     }
 }
 
-document.querySelector('.switch').addEventListener('click', function(e) {
+document.querySelector('.switch').addEventListener('click', function (e) {
     toggleDarkMode(e.currentTarget);
     updateLocalStorageDarkModeValue();
     sendDarkModeChoiceToApi();
@@ -98,7 +98,7 @@ function toggleBackground() {
 
 function toggleText() {
     var textElements = document.querySelectorAll('h4.custom, h5.custom, h6.custom, ul');
-    textElements.forEach(function(textElement) {
+    textElements.forEach(function (textElement) {
         textElement.classList.toggle('dark');
     });
 }
