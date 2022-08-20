@@ -1,13 +1,13 @@
 version: '3.7'
 
 services:
-    node:
-        build:
-            dockerfile: 'Dockerfile'
-            context: '.'
-        working_dir: /home/node/app
-        command: /bin/sh -c 'npm install --production=false && npm run serve'
-        volumes:
-            - ./:/home/node/app
-        ports:
-            - 8080:8080
+  node:
+    build:
+      dockerfile: 'Dockerfile'
+      context: '.'
+    working_dir: /home/node/app
+    command: /bin/sh -c 'npm run dev'
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 5173:5173

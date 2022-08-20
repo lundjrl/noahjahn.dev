@@ -1,11 +1,11 @@
 <template>
-  <p>
-    $ {{ text }}|
-  </p>
+  <p>$ {{ text }}|</p>
 </template>
 
-<script>
-
+<script setup lang="ts">
+defineProps<{
+  text: string;
+}>();
 // const aText = [
 //   'There are only 10 types of people in the world:',
 //   'Those who understand binary, and those who don\'t',
@@ -19,7 +19,7 @@
 // const sContents = ''; // initialise contents variable
 // let iRow; // initialise current row
 
-function type(text) {
+function type(text: string) {
   console.log(text);
   // sContents = ' ';
   // iRow = Math.max(0, iIndex - iScrollAt);
@@ -42,18 +42,18 @@ function type(text) {
   // }
 }
 
-export default {
-  name: 'TerminalText',
-  props: {
-    text: String,
-  },
-  data: (instance) => {
-    type(instance.text);
-  },
-  methods: {
-    type,
-  },
-};
+// export default {
+//   name: 'TerminalText',
+//   props: {
+//     text: String,
+//   },
+//   data: (instance) => {
+//     type(instance.text);
+//   },
+//   methods: {
+//     type,
+//   },
+// };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
