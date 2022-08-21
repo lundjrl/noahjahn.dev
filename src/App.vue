@@ -3,7 +3,5 @@ import TerminalFrame from './components/TerminalFrame.vue';
 </script>
 
 <template>
-  <div>
-    <TerminalFrame />
-  </div>
+  <TerminalFrame />
 </template>

@@ -1,5 +1,7 @@
 <template>
-  <div class="terminal">
+  <div
+    class="border border-solid border-stone-800 rounded-lg p-1 max-h-72 overflow-y-scroll scrollbar-w-none shadow-md shadow-black"
+  >
     <TerminalText text="Hello" />
     <TerminalText text="My name is Noah Jahn" />
     <TerminalText text="I'm a Software Developer" />
@@ -22,24 +24,10 @@ import TerminalInput from './TerminalInput.vue';
 </script>
 
 <style scoped lang="scss">
-.terminal {
-  max-height: 60vh;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
+.scrollbar-w-none {
   scrollbar-width: none;
-  border: 0.5px solid black;
-  border-radius: 7px;
-  padding: 0.5rem;
-  box-shadow: 2px 2px 10px black;
-  display: block;
-  position: absolute;
-  // bottom: 0;
-  top: 45%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.terminal::-webkit-scrollbar {
-  display: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 </style>

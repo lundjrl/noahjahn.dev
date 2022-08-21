@@ -1,5 +1,5 @@
 <template>
-  <p>$ {{ text }}|</p>
+  <p class="m-0 p-0 leading-snug">$ {{ text }}|</p>
 </template>
 
 <script setup lang="ts">
@@ -55,11 +55,3 @@ function type(text: string) {
 //   },
 // };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-p {
-  width: 100%;
-  margin: 0.2em 0 0.2em 0;
-}
-</style>
