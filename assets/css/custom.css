@@ -45,6 +45,7 @@ h4.custom.dark {
 
 h4.primary {
     color: var(--primary) !important;
+    font-weight: 400;
 }
 
 h5.custom.dark {
