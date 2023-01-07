@@ -73,6 +73,8 @@ h6.custom {
 
 .profile {
     text-align: center;
+    border-radius: 100%;
+    max-width: 235px;
 }
 
 .contact-link {
@@ -154,12 +156,6 @@ ul li {
     border-radius: 100%;
     background: var(--primary);
     margin-right: 2px;
-}
-
-@media (min-width: 800px) {
-    .sidebar {
-        position: fixed;
-    }
 }
 
 @media (min-width: 550px) {
