@@ -10,7 +10,7 @@
       problems and make humans more efficient."
     />
     <TerminalText
-      text="I enjoy exploring the world with my Wife and playing video games"
+      text="I enjoy exploring the world and playing Rust"
     />
     <TerminalText text="This is a terminal about me. Type `help` to begin" />
     <TerminalText text="Or if you'd like an interface, type `gui`" />
